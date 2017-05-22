@@ -13,6 +13,7 @@ public class ConvertisseurDeNombreRomain {
         map.put('D', 500);
         map.put('M', 1000);
 
+<<<<<<< HEAD
         int retour = 0;
         int retenue = 0;
 
@@ -25,5 +26,15 @@ public class ConvertisseurDeNombreRomain {
         }
 
         return retour;
+=======
+        int res = 0;
+
+        for (char c : i.toCharArray()) {
+            if
+            res += map.get(c);
+        }
+
+        return res;
+>>>>>>> origin/master
     }
 }
