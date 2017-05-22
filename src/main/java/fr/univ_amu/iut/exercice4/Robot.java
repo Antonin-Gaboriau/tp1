@@ -1,12 +1,12 @@
 package fr.univ_amu.iut.exercice4;
 
-
 public class Robot {
     private GridPosition gridPosition;
     private Orientation orientation;
 
     public Robot(GridPosition gridPosition, Orientation orientation) {
-        throw new RuntimeException("Not yet implemented !");
+        this.gridPosition = gridPosition;
+        this.orientation  = orientation;
     }
 
     public GridPosition getGridPosition() {
@@ -18,15 +18,53 @@ public class Robot {
     }
 
     public void turnRight() {
-        throw new RuntimeException("Not yet implemented !");
+        switch (this.orientation) {
+            case NORTH :
+                this.orientation = Orientation.EAST;
+                break;
+            case WEST :
+                this.orientation = Orientation.NORTH;
+                break;
+            case SOUTH :
+                this.orientation = Orientation.WEST;
+                break;
+            case EAST :
+                this.orientation = Orientation.SOUTH;
+                break;
+        }
     }
 
     public void turnLeft() {
-        throw new RuntimeException("Not yet implemented !");
+        switch (this.orientation) {
+            case NORTH :
+                this.orientation = Orientation.WEST;
+                break;
+            case WEST :
+                this.orientation = Orientation.SOUTH;
+                break;
+            case SOUTH :
+                this.orientation = Orientation.EAST;
+                break;
+            case EAST :
+                this.orientation = Orientation.NORTH;
+                break;
+        }
     }
 
     public void advance() {
-        throw new RuntimeException("Not yet implemented !");
+        switch (this.orientation) {
+            case NORTH :
+                this.gridPosition.setY(this.gridPosition.getY()+1);
+                break;
+            case WEST :
+                this.gridPosition.setX(this.gridPosition.getX()-1);
+                break;
+            case SOUTH :
+                this.gridPosition.setY(this.gridPosition.getY()-1);
+                break;
+            case EAST :
+                this.gridPosition.setX(this.gridPosition.getX()+1);
+                break;
+        }
     }
 }
-

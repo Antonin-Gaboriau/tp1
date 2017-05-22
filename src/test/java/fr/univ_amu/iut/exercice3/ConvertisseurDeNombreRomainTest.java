@@ -93,6 +93,7 @@ public class ConvertisseurDeNombreRomainTest {
         assertThat(nombre).isEqualTo(4888);
     }
 
+    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void leChiffreRomainICDevraitDonnerUneException() {
         convertisseurDeNombreRomain.enNombreArabe("IC");
